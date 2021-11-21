@@ -32,23 +32,13 @@ class DoubleLinkList:
         if self.header:
             print("Node", Node.data)
             print("Head", self.header.data)
-            if self.header.data == Node.data:
+            print("Type ", type(self.header.data))
+            print(type(Node.data))
+            if int(self.header.data) == int(Node.data):
                 print("HERE!!")
                 cur = self.header.next
                 cur.prev = None
                 self.header = cur
-            else:
-                cur = self.header
-                while cur.data != Node.data:
-                    cur = cur.next
-                if cur.next == None:
-                    curPrev = cur.prev
-                    curPrev.next = None
-                else:
-                    curPrev = cur.prev
-                    curNext = cur.Next
-                    curPrev.next = curNext
-                    curNext.prev = curPrev
 
 
 dlist = DoubleLinkList()
